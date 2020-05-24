@@ -69,9 +69,4 @@ public class TaskList {
 	public void removeTask(Task task) {
 		this.tasks.remove(task);
 	}
-	
-	@Override
-	public String toString() {
-		return "\nLista de Tarefas \nID da Lista=" + id + "\nNome da Lista=" + name + tasks + "\n";
-	}
 }

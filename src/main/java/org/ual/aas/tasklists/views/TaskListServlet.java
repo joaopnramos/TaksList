@@ -17,7 +17,6 @@ import org.ual.aas.tasklists.models.TaskList;
 
 import com.google.gson.Gson;
 
-
 @WebServlet("/lists/*")
 
 public class TaskListServlet extends HttpServlet {
@@ -85,12 +84,12 @@ public class TaskListServlet extends HttpServlet {
 		}
 		else if(splits.length == 4) { // POST /lists/<list_id>/
 			String listId = splits[3];
-			String taskStatus = "Em processo";
+			String taskStatus = "doing";
 			StringBuilder buffer = new StringBuilder();
 			BufferedReader reader = req.getReader();
 			String taskDescription = reader.readLine();
 			String taskListId = controller.createTask(listId, taskDescription, taskStatus);
-			PrintWriter writer = resp.getWriter();´
+			PrintWriter writer = resp.getWriter();
 			//"{\"id\":" + taskListId + "}"
 			writer.println("Tarefa Criada!");
 			writer.close();
@@ -124,7 +123,10 @@ public class TaskListServlet extends HttpServlet {
 
 		if(splits.length == 4) { // PUT /lists/
 			String listId = splits[3];
-			String name = splits[4];
+			//String name = splits[4];
+			StringBuilder buffer = new StringBuilder();
+			BufferedReader reader = req.getReader();
+			String name = reader.readLine();
 			if(!controller.hasTaskList(listId)) {
 				writer.println("ERRO!\n Não Existe!");
 			}

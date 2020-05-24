@@ -59,7 +59,6 @@ public class TaskListController {
 	}
 	
 	public List<TaskList> getTaskLists() {
-		// TODO Auto-generated method stub
 		return readTaskLists();
 	}
 
@@ -74,7 +73,6 @@ public class TaskListController {
 	}
 
 	public boolean hasTaskList(String name) {
-		// TODO Auto-generated method stub
 		boolean t = true;
 		List<TaskList> taskLists = null;
 		taskLists = getTaskLists();
@@ -212,7 +210,5 @@ public class TaskListController {
         session.getTransaction().commit();
         session.close();
         return "Sucesso a apagar a Lista!";
-
 	}
-
 }

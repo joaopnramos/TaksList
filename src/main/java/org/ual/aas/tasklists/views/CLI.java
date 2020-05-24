@@ -163,6 +163,7 @@ public class CLI {
 			break;
 			default:
 				System.out.println("Invalid instruction.");
+				scanner.close();
 			}
 		}
 	}

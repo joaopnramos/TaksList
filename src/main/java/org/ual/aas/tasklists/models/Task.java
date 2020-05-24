@@ -47,11 +47,4 @@ public class Task {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-	@Override
-	public String toString() {
-		return "\n--Tarefas--\nID da Tarefa=" + id + "\nDescricao=" + description + "\nEstado=" + status + "\n";
-	}
-	
-	
 }
